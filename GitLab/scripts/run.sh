@@ -14,4 +14,4 @@ vm_ip=${info[0]}
 vm_ssh_port=${info[1]}
 
 ssh -i "$ORKA_SSH_KEY_FILE" \
-  -o ServerAliveInterval=60 -o ServerAliveCountMax=60 "$ORKA_VM_USER@$vm_ip" -p "$vm_ssh_port" /bin/bash < "${1}"
+  -o ServerAliveInterval=$CUSTOM_ENV_ORKA_SSH_ALIVE_INTERVAL -o ServerAliveCountMax=$CUSTOM_ENV_ORKA_SSH_ALIVE_COUNT_MAX "$ORKA_VM_USER@$vm_ip" -p "$vm_ssh_port" /bin/bash < "${1}"

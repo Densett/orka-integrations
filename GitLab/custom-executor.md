@@ -65,6 +65,8 @@ The provided scripts expect the following environment variables to be set:
 - `CUSTOM_ENV_ORKA_VM_NAME_PREFIX` - The prefix of the generated VM name. Defaults to `gl-runner`.
 - `CUSTOM_ENV_ORKA_VM_USER` - User used to SSH to the VM.
 - `CUSTOM_ENV_ORKA_SSH_KEY_FILE` - The private SSH key contents to use when connecting to the VM. This key was created earlier during the Orka base image setup.
+- `CUSTOM_ENV_ORKA_SSH_ALIVE_INTERVAL` - The timeout interval in seconds which if no data has been received from the server, ssh client will request a response from the server. Defaults to `60`.
+- `CUSTOM_ENV_ORKA_SSH_ALIVE_COUNT_MAX` - The number of server alive messages which may be sent without ssh receiving any messages back from the server. Defaults to `60`.
 
 For more information about GitLab CI/CD environment variables, see [here][env-variables].
 
